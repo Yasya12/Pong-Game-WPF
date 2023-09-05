@@ -1,0 +1,14 @@
+﻿<Window x:Class="Pong_Game_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pong_Game_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="500">
+    <Canvas x:Name="MyCanvas" Focusable="True" KeyDown="KeyIsDown">
+        <Rectangle x:Name="platform" Height="20" Width="100" Fill="Orange" Canvas.Bottom="20" Canvas.Left="140"/>
+        <Rectangle x:Name="ball" Height="20" Width="20" Fill="Black" Canvas.Bottom="200" Canvas.Left="190"/>
+        <Label x:Name="GameOverText" FontSize="32" FontWeight="Bold" Content="Game Over!" Canvas.Left="160" Canvas.Top="160" Visibility="Hidden"/>
+    </Canvas>
+</Window>
