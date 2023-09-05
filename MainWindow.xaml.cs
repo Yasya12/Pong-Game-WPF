@@ -29,6 +29,8 @@ namespace Pong_Game_WPF
 
         Rect ballHitBox, platformHitBox;
 
+        bool gameOver = false;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -106,7 +108,7 @@ namespace Pong_Game_WPF
 
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter)// && gameOver)
+            if (e.Key == Key.Enter && gameOver)
             {
                 StartGame();
             }
