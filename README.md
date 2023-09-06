@@ -10,7 +10,8 @@ This is the pong game using WPF where XAML is a frontend language and C# is a ba
 - Color pallete from [here](https://colorhunt.co/palette/27005d9400ffaed2ffe4f1ff)
 ## Screenshots
 
-![App Screenshot](https://drive.google.com/file/d/12OVzc2ZvJP3EBjyjCj7Ch47cxVgdwkXZ/view?usp=sharing)
+![title](images/GamePage.jpg)
+![title](images/GameOver.jpg)
 
 
 
