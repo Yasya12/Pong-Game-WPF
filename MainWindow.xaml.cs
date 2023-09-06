@@ -21,6 +21,11 @@ namespace Pong_Game_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        //додати коменти
+        //зробити інтерфейс кращим, кольорову гамі + картинки
+        //створити рід мі файл і додати в проект
+        //залити все на гіт і зробити репо публічним
+
         DispatcherTimer timer = new DispatcherTimer();
 
         int speedX = 5, speedY = 5;
@@ -31,10 +36,16 @@ namespace Pong_Game_WPF
 
         bool gameOver = false;
 
+        ImageBrush ballIcon = new ImageBrush();
+        Color color = (Color)ColorConverter.ConvertFromString("#27005D");
+
         public MainWindow()
         {
             InitializeComponent();
             MyCanvas.Focus();
+
+            ballIcon.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/ball.png", UriKind.RelativeOrAbsolute));
+            ball.Fill = ballIcon;
 
             Loaded += (sender, e) =>
             {
@@ -47,7 +58,6 @@ namespace Pong_Game_WPF
             timer.Tick += GameLogic;
 
         }
-
         public void GameLogic(object sender, EventArgs e)
         {
             MovePlatform();
@@ -101,7 +111,10 @@ namespace Pong_Game_WPF
             ball.Visibility = Visibility.Hidden;
             platform.Visibility = Visibility.Hidden;
             GameOverText.Visibility = Visibility.Visible;
-            MyCanvas.Background = new SolidColorBrush(Colors.Red);
+            RestartText.Visibility = Visibility.Visible;
+
+            color = (Color)ColorConverter.ConvertFromString("#27005D");
+            MyCanvas.Background = new SolidColorBrush(color);
 
             gameOver = true;
         }
@@ -116,18 +129,21 @@ namespace Pong_Game_WPF
 
         public void StartGame()
         {
+            color = (Color)ColorConverter.ConvertFromString("#9400FF");
+            MyCanvas.Background = new SolidColorBrush(color);
+
             Canvas.SetBottom(ball, 200);
             Canvas.SetLeft(ball, 190);
 
             Canvas.SetBottom(platform, 20);
-            Canvas.SetLeft(platform, 140);
+            Canvas.SetLeft(platform, 140);            
 
             speedY = -speedY;
 
             ball.Visibility = Visibility.Visible;
             platform.Visibility = Visibility.Visible;
             GameOverText.Visibility = Visibility.Hidden;
-            MyCanvas.Background = new SolidColorBrush(Colors.White);
+            RestartText.Visibility = Visibility.Hidden;
 
             gameOver = false;
 

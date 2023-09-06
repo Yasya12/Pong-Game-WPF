@@ -4,11 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pong_Game_WPF"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="500">
-    <Canvas x:Name="MyCanvas" Focusable="True" KeyDown="KeyIsDown">
-        <Rectangle x:Name="platform" Height="20" Width="100" Fill="Orange" Canvas.Bottom="20" Canvas.Left="140"/>
+        Title="Pong Game" Height="450" Width="500" Icon="pack://application:,,,/images/gameIcon.png">
+
+    <Canvas x:Name="MyCanvas" Background="#9400FF" Focusable="True" KeyDown="KeyIsDown">
+        <Rectangle x:Name="platform" Height="20" Width="100" Fill="#27005D" Canvas.Bottom="20" Canvas.Left="140"/>
         <Rectangle x:Name="ball" Height="20" Width="20" Fill="Black" Canvas.Bottom="200" Canvas.Left="190"/>
-        <Label x:Name="GameOverText" FontSize="32" FontWeight="Bold" Content="Game Over!" Canvas.Left="160" Canvas.Top="160" Visibility="Hidden"/>
+        <Label x:Name="GameOverText" Foreground="#E4F1FF"  FontSize="32" FontWeight="Bold" Content="Game Over!" Canvas.Left="160" Canvas.Top="160" Visibility="Hidden"/>
+        <Label x:Name="RestartText" Foreground="#E4F1FF"  FontSize="15" Content="Press ENTER to restart" Canvas.Left="160" Canvas.Bottom="10" Visibility="Hidden"/>
     </Canvas>
 </Window>
